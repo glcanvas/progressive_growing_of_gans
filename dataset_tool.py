@@ -634,8 +634,8 @@ def reshape_image(image_dir, output_dir):
     return image_filenames
 
 
-def create_from_images(tfrecord_dir, image_dir, output_image_dir, shuffle):
-    reshape_image(image_dir, output_image_dir)
+def create_from_images(tfrecord_dir, image_dir, shuffle):
+    # reshape_image(image_dir, output_image_dir)
     print('Loading images from "%s"' % image_dir)
     image_filenames = sorted(glob.glob(os.path.join(image_dir, '*')))
     if len(image_filenames) == 0:
@@ -764,7 +764,7 @@ def execute_cmdline(argv):
                     'create_from_images datasets/mydataset myimagedir')
     p.add_argument('tfrecord_dir', help='New dataset directory to be created')
     p.add_argument('image_dir', help='Directory containing the images')
-    p.add_argument('output_image_dir', help='Directory containing the reshaped images')
+    # p.add_argument('output_image_dir', help='Directory containing the reshaped images')
     p.add_argument('--shuffle', help='Randomize image order (default: 1)', type=int, default=1)
 
     p = add_command('create_from_hdf5', 'Create dataset from legacy HDF5 archive.',
