@@ -158,6 +158,7 @@ class TFRecordDataset:
         if self.label_size > 0:
             return tf.gather(self._tf_labels_var, tf.random_uniform([minibatch_size], 0, self._np_labels.shape[0], dtype=tf.int32))
         else:
+            print("!!!", self.label_dtype)
             return tf.zeros([minibatch_size, 0], self.label_dtype)
 
     # Get random labels as NumPy array.
