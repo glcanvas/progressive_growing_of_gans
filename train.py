@@ -283,8 +283,8 @@ if __name__ == "__main__":
     np.random.seed(config.random_seed)
     print('Initializing TensorFlow...')
 
-    #from tensorflow.python.client import device_lib
-    #print(device_lib.list_local_devices())
+    from tensorflow.python.client import device_lib
+    print(device_lib.list_local_devices())
 
     os.environ.update(config.env)
 
