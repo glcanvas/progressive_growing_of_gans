@@ -681,7 +681,7 @@ class Network:
                 # for gpu in range(num_gpus):
                 gpu = config.gpu_numbver
                 with tf.device('/gpu:%d' % gpu):
-                    out_expr = self.get_output_for(*in_split[gpu], return_as_list=True, **dynamic_kwargs)
+                    out_expr = self.get_output_for(*in_split[0], return_as_list=True, **dynamic_kwargs)
                     if out_mul != 1.0:
                         out_expr = [x * out_mul for x in out_expr]
                     if out_add != 0.0:
