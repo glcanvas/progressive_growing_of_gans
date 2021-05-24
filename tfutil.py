@@ -7,6 +7,7 @@
 
 import os
 import sys
+import config
 import inspect
 import importlib
 import imp
