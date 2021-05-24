@@ -160,7 +160,7 @@ class TFRecordDataset:
         else:
             print("!!!", self.label_dtype, minibatch_size)
             print("!!! ->{}<-".format(minibatch_size))
-            print("!!!!!!->{}<-".format(minibatch_size.eval()))
+            print("!!!!!!->{}<-".format(tf.shape(minibatch_size)))
             return tf.zeros([minibatch_size, 0], dtype=tf.dtypes.float32)
 
     # Get random labels as NumPy array.
